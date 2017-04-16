@@ -1,0 +1,6 @@
+framework module Pods_CremaTests {
+  umbrella header "Pods-CremaTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

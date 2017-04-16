@@ -7,13 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5065D63602ED7095D6F08816 /* Pods_CremaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97527091E3B658C29A137980 /* Pods_CremaTests.framework */; };
 		69BAD4C71E912BE800F2715C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BAD4C61E912BE800F2715C /* AppDelegate.swift */; };
-		69BAD4C91E912BE800F2715C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BAD4C81E912BE800F2715C /* ViewController.swift */; };
 		69BAD4CC1E912BE800F2715C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69BAD4CA1E912BE800F2715C /* Main.storyboard */; };
 		69BAD4CE1E912BE800F2715C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69BAD4CD1E912BE800F2715C /* Assets.xcassets */; };
 		69BAD4D11E912BE800F2715C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69BAD4CF1E912BE800F2715C /* LaunchScreen.storyboard */; };
 		69BAD4DC1E912BE800F2715C /* CremaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BAD4DB1E912BE800F2715C /* CremaTests.swift */; };
 		69BAD4E71E912BE800F2715C /* CremaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BAD4E61E912BE800F2715C /* CremaUITests.swift */; };
+		69BAD4FF1E9381C200F2715C /* autoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BAD4FE1E9381C200F2715C /* autoLayout.swift */; };
+		69BAD5021E9383F300F2715C /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BAD5011E9383F300F2715C /* UserModel.swift */; };
+		69BAD5041E9386CF00F2715C /* TopMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BAD5031E9386CF00F2715C /* TopMapViewController.swift */; };
+		69BAD5061E938FBC00F2715C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BAD5051E938FBC00F2715C /* User.swift */; };
+		69BAD50E1E93B10A00F2715C /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = 69BAD5091E93B10A00F2715C /* default.png */; };
+		69BAD50F1E93B10A00F2715C /* clothes.png in Resources */ = {isa = PBXBuildFile; fileRef = 69BAD50A1E93B10A00F2715C /* clothes.png */; };
+		69BAD5101E93B10A00F2715C /* restaurant.png in Resources */ = {isa = PBXBuildFile; fileRef = 69BAD50B1E93B10A00F2715C /* restaurant.png */; };
+		69BAD5111E93B10A00F2715C /* hairsalon.png in Resources */ = {isa = PBXBuildFile; fileRef = 69BAD50C1E93B10A00F2715C /* hairsalon.png */; };
+		69BAD5121E93B10A00F2715C /* cafe.png in Resources */ = {isa = PBXBuildFile; fileRef = 69BAD50D1E93B10A00F2715C /* cafe.png */; };
+		69BAD5181E98CC8B00F2715C /* ModelLocater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BAD5171E98CC8B00F2715C /* ModelLocater.swift */; };
+		69D95CEE1E9A36C90072A3C8 /* Contribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D95CED1E9A36C90072A3C8 /* Contribution.swift */; };
+		69D95CF01E9A3D360072A3C8 /* ContributionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D95CEF1E9A3D360072A3C8 /* ContributionModel.swift */; };
+		69D95CF31E9A65B30072A3C8 /* UploadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D95CF21E9A65B30072A3C8 /* UploadManager.swift */; };
+		69D95CF51E9A65BE0072A3C8 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D95CF41E9A65BE0072A3C8 /* Upload.swift */; };
+		69D95CFA1E9AFA800072A3C8 /* GAPISpotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D95CF91E9AFA800072A3C8 /* GAPISpotModel.swift */; };
+		69D95D001E9F5E1C0072A3C8 /* SpotDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D95CFF1E9F5E1C0072A3C8 /* SpotDetailViewController.swift */; };
+		69D95D031EA35C150072A3C8 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D95D021EA35C150072A3C8 /* APIClient.swift */; };
+		6FA16B6BAF94455E975723BA /* Pods_Crema.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5CA860460D25D055BEB160 /* Pods_Crema.framework */; };
+		FDE1384B3C8830AFF2921DD4 /* Pods_CremaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84831BD380CE0B2C9A301A4C /* Pods_CremaUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +53,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02668018576C7EA4CB6F856F /* Pods-CremaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CremaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CremaTests/Pods-CremaTests.release.xcconfig"; sourceTree = "<group>"; };
+		2735673AF102C53B12E3235C /* Pods-Crema.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crema.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Crema/Pods-Crema.debug.xcconfig"; sourceTree = "<group>"; };
+		494D04972F24FC5B5709B625 /* Pods-Crema.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crema.release.xcconfig"; path = "Pods/Target Support Files/Pods-Crema/Pods-Crema.release.xcconfig"; sourceTree = "<group>"; };
+		4F41E08D096DCF35F27BCCFA /* Pods-CremaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CremaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CremaTests/Pods-CremaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		54997D96E74208BD4099D18B /* Pods-CremaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CremaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CremaUITests/Pods-CremaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5A5CA860460D25D055BEB160 /* Pods_Crema.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crema.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69BAD4C31E912BE800F2715C /* Crema.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crema.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69BAD4C61E912BE800F2715C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		69BAD4C81E912BE800F2715C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		69BAD4CB1E912BE800F2715C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		69BAD4CD1E912BE800F2715C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		69BAD4D01E912BE800F2715C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +71,26 @@
 		69BAD4E21E912BE800F2715C /* CremaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CremaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		69BAD4E61E912BE800F2715C /* CremaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CremaUITests.swift; sourceTree = "<group>"; };
 		69BAD4E81E912BE800F2715C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69BAD4FE1E9381C200F2715C /* autoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = autoLayout.swift; sourceTree = "<group>"; };
+		69BAD5011E9383F300F2715C /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		69BAD5031E9386CF00F2715C /* TopMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopMapViewController.swift; sourceTree = "<group>"; };
+		69BAD5051E938FBC00F2715C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		69BAD5091E93B10A00F2715C /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = default.png; path = ../../../../Downloads/default.png; sourceTree = "<group>"; };
+		69BAD50A1E93B10A00F2715C /* clothes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = clothes.png; path = ../../../../Downloads/clothes.png; sourceTree = "<group>"; };
+		69BAD50B1E93B10A00F2715C /* restaurant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = restaurant.png; path = ../../../../Downloads/restaurant.png; sourceTree = "<group>"; };
+		69BAD50C1E93B10A00F2715C /* hairsalon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hairsalon.png; path = ../../../../Downloads/hairsalon.png; sourceTree = "<group>"; };
+		69BAD50D1E93B10A00F2715C /* cafe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cafe.png; path = ../../../../Downloads/cafe.png; sourceTree = "<group>"; };
+		69BAD5171E98CC8B00F2715C /* ModelLocater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelLocater.swift; sourceTree = "<group>"; };
+		69D95CED1E9A36C90072A3C8 /* Contribution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contribution.swift; sourceTree = "<group>"; };
+		69D95CEF1E9A3D360072A3C8 /* ContributionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContributionModel.swift; sourceTree = "<group>"; };
+		69D95CF21E9A65B30072A3C8 /* UploadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadManager.swift; sourceTree = "<group>"; };
+		69D95CF41E9A65BE0072A3C8 /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
+		69D95CF91E9AFA800072A3C8 /* GAPISpotModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAPISpotModel.swift; sourceTree = "<group>"; };
+		69D95CFF1E9F5E1C0072A3C8 /* SpotDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotDetailViewController.swift; sourceTree = "<group>"; };
+		69D95D021EA35C150072A3C8 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		84831BD380CE0B2C9A301A4C /* Pods_CremaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CremaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		97527091E3B658C29A137980 /* Pods_CremaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CremaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5C798FE8FB79E643B01B311 /* Pods-CremaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CremaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CremaUITests/Pods-CremaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FA16B6BAF94455E975723BA /* Pods_Crema.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5065D63602ED7095D6F08816 /* Pods_CremaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +114,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDE1384B3C8830AFF2921DD4 /* Pods_CremaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F26F37FFA43BFB22A54BEC6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A5CA860460D25D055BEB160 /* Pods_Crema.framework */,
+				97527091E3B658C29A137980 /* Pods_CremaTests.framework */,
+				84831BD380CE0B2C9A301A4C /* Pods_CremaUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		69BAD4BA1E912BE800F2715C = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +138,8 @@
 				69BAD4DA1E912BE800F2715C /* CremaTests */,
 				69BAD4E51E912BE800F2715C /* CremaUITests */,
 				69BAD4C41E912BE800F2715C /* Products */,
+				E53E3CD0F6CB467504E39230 /* Pods */,
+				5F26F37FFA43BFB22A54BEC6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,8 +156,13 @@
 		69BAD4C51E912BE800F2715C /* Crema */ = {
 			isa = PBXGroup;
 			children = (
+				69D95D011EA2193F0072A3C8 /* APIClinet */,
+				69D95CFB1E9E78650072A3C8 /* extension */,
+				69BAD5071E93B0B700F2715C /* img */,
+				69BAD4F61E92507F00F2715C /* controller */,
+				69BAD4F51E92507A00F2715C /* view */,
+				69BAD4F41E92507100F2715C /* model */,
 				69BAD4C61E912BE800F2715C /* AppDelegate.swift */,
-				69BAD4C81E912BE800F2715C /* ViewController.swift */,
 				69BAD4CA1E912BE800F2715C /* Main.storyboard */,
 				69BAD4CD1E912BE800F2715C /* Assets.xcassets */,
 				69BAD4CF1E912BE800F2715C /* LaunchScreen.storyboard */,
@@ -125,6 +189,150 @@
 			path = CremaUITests;
 			sourceTree = "<group>";
 		};
+		69BAD4F41E92507100F2715C /* model */ = {
+			isa = PBXGroup;
+			children = (
+				69D95CF61E9AFA4A0072A3C8 /* spotFromGAPI */,
+				69D95CF11E9A65900072A3C8 /* niftyUpload */,
+				69BAD5141E93C89200F2715C /* networking */,
+				69BAD5131E93C87700F2715C /* contributions */,
+				69BAD5001E9383C100F2715C /* users */,
+				69BAD4F71E92508B00F2715C /* map */,
+				69BAD5171E98CC8B00F2715C /* ModelLocater.swift */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		69BAD4F51E92507A00F2715C /* view */ = {
+			isa = PBXGroup;
+			children = (
+				69BAD4F81E9250A600F2715C /* util */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		69BAD4F61E92507F00F2715C /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				69BAD5031E9386CF00F2715C /* TopMapViewController.swift */,
+				69D95CFF1E9F5E1C0072A3C8 /* SpotDetailViewController.swift */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		69BAD4F71E92508B00F2715C /* map */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = map;
+			sourceTree = "<group>";
+		};
+		69BAD4F81E9250A600F2715C /* util */ = {
+			isa = PBXGroup;
+			children = (
+				69BAD4FE1E9381C200F2715C /* autoLayout.swift */,
+			);
+			name = util;
+			sourceTree = "<group>";
+		};
+		69BAD5001E9383C100F2715C /* users */ = {
+			isa = PBXGroup;
+			children = (
+				69BAD5011E9383F300F2715C /* UserModel.swift */,
+				69BAD5051E938FBC00F2715C /* User.swift */,
+			);
+			name = users;
+			sourceTree = "<group>";
+		};
+		69BAD5071E93B0B700F2715C /* img */ = {
+			isa = PBXGroup;
+			children = (
+				69BAD5081E93B0C200F2715C /* jenre */,
+			);
+			name = img;
+			sourceTree = "<group>";
+		};
+		69BAD5081E93B0C200F2715C /* jenre */ = {
+			isa = PBXGroup;
+			children = (
+				69BAD5091E93B10A00F2715C /* default.png */,
+				69BAD50A1E93B10A00F2715C /* clothes.png */,
+				69BAD50B1E93B10A00F2715C /* restaurant.png */,
+				69BAD50C1E93B10A00F2715C /* hairsalon.png */,
+				69BAD50D1E93B10A00F2715C /* cafe.png */,
+			);
+			name = jenre;
+			sourceTree = "<group>";
+		};
+		69BAD5131E93C87700F2715C /* contributions */ = {
+			isa = PBXGroup;
+			children = (
+				69D95CED1E9A36C90072A3C8 /* Contribution.swift */,
+				69D95CEF1E9A3D360072A3C8 /* ContributionModel.swift */,
+			);
+			name = contributions;
+			sourceTree = "<group>";
+		};
+		69BAD5141E93C89200F2715C /* networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = networking;
+			sourceTree = "<group>";
+		};
+		69D95CF11E9A65900072A3C8 /* niftyUpload */ = {
+			isa = PBXGroup;
+			children = (
+				69D95CF21E9A65B30072A3C8 /* UploadManager.swift */,
+				69D95CF41E9A65BE0072A3C8 /* Upload.swift */,
+			);
+			name = niftyUpload;
+			sourceTree = "<group>";
+		};
+		69D95CF61E9AFA4A0072A3C8 /* spotFromGAPI */ = {
+			isa = PBXGroup;
+			children = (
+				69D95CF91E9AFA800072A3C8 /* GAPISpotModel.swift */,
+			);
+			name = spotFromGAPI;
+			sourceTree = "<group>";
+		};
+		69D95CFB1E9E78650072A3C8 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				69D95CFE1E9E799D0072A3C8 /* GMSMarker */,
+			);
+			name = extension;
+			sourceTree = "<group>";
+		};
+		69D95CFE1E9E799D0072A3C8 /* GMSMarker */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = GMSMarker;
+			sourceTree = "<group>";
+		};
+		69D95D011EA2193F0072A3C8 /* APIClinet */ = {
+			isa = PBXGroup;
+			children = (
+				69D95D021EA35C150072A3C8 /* APIClient.swift */,
+			);
+			name = APIClinet;
+			sourceTree = "<group>";
+		};
+		E53E3CD0F6CB467504E39230 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2735673AF102C53B12E3235C /* Pods-Crema.debug.xcconfig */,
+				494D04972F24FC5B5709B625 /* Pods-Crema.release.xcconfig */,
+				4F41E08D096DCF35F27BCCFA /* Pods-CremaTests.debug.xcconfig */,
+				02668018576C7EA4CB6F856F /* Pods-CremaTests.release.xcconfig */,
+				D5C798FE8FB79E643B01B311 /* Pods-CremaUITests.debug.xcconfig */,
+				54997D96E74208BD4099D18B /* Pods-CremaUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +340,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 69BAD4EB1E912BE800F2715C /* Build configuration list for PBXNativeTarget "Crema" */;
 			buildPhases = (
+				2BAD52B9E5CDD4B5B2B5451F /* [CP] Check Pods Manifest.lock */,
 				69BAD4BF1E912BE800F2715C /* Sources */,
 				69BAD4C01E912BE800F2715C /* Frameworks */,
 				69BAD4C11E912BE800F2715C /* Resources */,
+				CCEEAF3E992627CAD8299E23 /* [CP] Embed Pods Frameworks */,
+				D7418618683F695AE3DB5323 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +360,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 69BAD4EE1E912BE800F2715C /* Build configuration list for PBXNativeTarget "CremaTests" */;
 			buildPhases = (
+				06BF0049B0E760C3176BCB0C /* [CP] Check Pods Manifest.lock */,
 				69BAD4D31E912BE800F2715C /* Sources */,
 				69BAD4D41E912BE800F2715C /* Frameworks */,
 				69BAD4D51E912BE800F2715C /* Resources */,
+				B40D042F014A96D438E3D1C6 /* [CP] Embed Pods Frameworks */,
+				9134FAB5770FC9B492256C9A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +381,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 69BAD4F11E912BE800F2715C /* Build configuration list for PBXNativeTarget "CremaUITests" */;
 			buildPhases = (
+				DE6EAE3A6729DBD89585466E /* [CP] Check Pods Manifest.lock */,
 				69BAD4DE1E912BE800F2715C /* Sources */,
 				69BAD4DF1E912BE800F2715C /* Frameworks */,
 				69BAD4E01E912BE800F2715C /* Resources */,
+				8ACD490F74FFAB220C5002DC /* [CP] Embed Pods Frameworks */,
+				01D4B25D5BEB819AC8B57235 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -235,9 +452,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69BAD5101E93B10A00F2715C /* restaurant.png in Resources */,
 				69BAD4D11E912BE800F2715C /* LaunchScreen.storyboard in Resources */,
+				69BAD5111E93B10A00F2715C /* hairsalon.png in Resources */,
 				69BAD4CE1E912BE800F2715C /* Assets.xcassets in Resources */,
 				69BAD4CC1E912BE800F2715C /* Main.storyboard in Resources */,
+				69BAD50F1E93B10A00F2715C /* clothes.png in Resources */,
+				69BAD50E1E93B10A00F2715C /* default.png in Resources */,
+				69BAD5121E93B10A00F2715C /* cafe.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,12 +479,161 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		01D4B25D5BEB819AC8B57235 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CremaUITests/Pods-CremaUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		06BF0049B0E760C3176BCB0C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2BAD52B9E5CDD4B5B2B5451F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8ACD490F74FFAB220C5002DC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CremaUITests/Pods-CremaUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9134FAB5770FC9B492256C9A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CremaTests/Pods-CremaTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B40D042F014A96D438E3D1C6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CremaTests/Pods-CremaTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CCEEAF3E992627CAD8299E23 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Crema/Pods-Crema-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7418618683F695AE3DB5323 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Crema/Pods-Crema-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE6EAE3A6729DBD89585466E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		69BAD4BF1E912BE800F2715C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69BAD4C91E912BE800F2715C /* ViewController.swift in Sources */,
+				69BAD5041E9386CF00F2715C /* TopMapViewController.swift in Sources */,
+				69BAD4FF1E9381C200F2715C /* autoLayout.swift in Sources */,
+				69D95CFA1E9AFA800072A3C8 /* GAPISpotModel.swift in Sources */,
+				69D95CF31E9A65B30072A3C8 /* UploadManager.swift in Sources */,
+				69BAD5021E9383F300F2715C /* UserModel.swift in Sources */,
+				69D95CF01E9A3D360072A3C8 /* ContributionModel.swift in Sources */,
+				69BAD5061E938FBC00F2715C /* User.swift in Sources */,
+				69D95CF51E9A65BE0072A3C8 /* Upload.swift in Sources */,
+				69BAD5181E98CC8B00F2715C /* ModelLocater.swift in Sources */,
+				69D95D031EA35C150072A3C8 /* APIClient.swift in Sources */,
+				69D95D001E9F5E1C0072A3C8 /* SpotDetailViewController.swift in Sources */,
+				69D95CEE1E9A36C90072A3C8 /* Contribution.swift in Sources */,
 				69BAD4C71E912BE800F2715C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +782,7 @@
 		};
 		69BAD4EC1E912BE800F2715C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2735673AF102C53B12E3235C /* Pods-Crema.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E8ASB5W8P9;
@@ -424,6 +796,7 @@
 		};
 		69BAD4ED1E912BE800F2715C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 494D04972F24FC5B5709B625 /* Pods-Crema.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E8ASB5W8P9;
@@ -437,6 +810,7 @@
 		};
 		69BAD4EF1E912BE800F2715C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F41E08D096DCF35F27BCCFA /* Pods-CremaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -452,6 +826,7 @@
 		};
 		69BAD4F01E912BE800F2715C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02668018576C7EA4CB6F856F /* Pods-CremaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -467,6 +842,7 @@
 		};
 		69BAD4F21E912BE800F2715C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5C798FE8FB79E643B01B311 /* Pods-CremaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = E8ASB5W8P9;
@@ -481,6 +857,7 @@
 		};
 		69BAD4F31E912BE800F2715C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54997D96E74208BD4099D18B /* Pods-CremaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = E8ASB5W8P9;
@@ -512,6 +889,7 @@
 				69BAD4ED1E912BE800F2715C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		69BAD4EE1E912BE800F2715C /* Build configuration list for PBXNativeTarget "CremaTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +898,7 @@
 				69BAD4F01E912BE800F2715C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		69BAD4F11E912BE800F2715C /* Build configuration list for PBXNativeTarget "CremaUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +907,7 @@
 				69BAD4F31E912BE800F2715C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

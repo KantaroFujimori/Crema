@@ -10,4 +10,7 @@ import UIKit
 
 class User: NSObject {
 
+    dynamic var id: String?
+    dynamic var insta_id: String?
+    dynamic var name: String?
 }

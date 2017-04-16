@@ -8,6 +8,7 @@
 
 import UIKit
 
-class Uploadmanager: NSObject {
-
+class UploadManager: NSObject {
+    static let sharedInstance = UploadManager()
+    var upload: [Upload] = []
 }

@@ -7,15 +7,27 @@
 //
 
 import UIKit
+import GoogleMaps
+import NCMB
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    let cGoogleMapsAPIKey = "AIzaSyBI2QgZdgmCX-alKddEPjBse6yZ2JCybzE"
+    let applicationkey = "a76e43c6eff9ed564424800adf133e32fa07e1b7d406732806ef64e940dab669"
+    let clientkey      = "aa10d71356859e745e838eb8dbfe11c9fc91c5c410ae720e30598ebce8ec363e"
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        GMSServices.provideAPIKey(cGoogleMapsAPIKey)
+        NCMB.setApplicationKey(applicationkey, clientKey: clientkey)
+        
+        
+        //TODO: login function -get data from keychain-
+        
         return true
     }
 
