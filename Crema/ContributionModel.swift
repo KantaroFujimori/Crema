@@ -14,7 +14,7 @@ import Bond
 
 class ContributionModel: NSObject {
     
-    dynamic var contributions: [Contribution] = []
+    var contributions = MutableObservableArray<Contribution>()
 
     var tempContributions: [Contribution] = []
     
