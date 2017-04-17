@@ -34,7 +34,7 @@
         <!--Spot Detail View Controller-->
         <scene sceneID="TOs-CW-8TA">
             <objects>
-                <viewController id="C1T-CN-x9k" customClass="SpotDetailViewController" customModule="Crema" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="C1T-CN-x9k" customClass="SpotDetailViewController" customModule="Crema" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ff6-xO-93H"/>
                         <viewControllerLayoutGuide type="bottom" id="WUl-gh-07d"/>
@@ -42,12 +42,27 @@
                     <view key="view" contentMode="scaleToFill" id="LzQ-G1-ZJL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bfv-A0-P3G">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WUl-gh-07d" firstAttribute="top" secondItem="Bfv-A0-P3G" secondAttribute="bottom" id="Naj-Z4-LSu"/>
+                            <constraint firstItem="Bfv-A0-P3G" firstAttribute="top" secondItem="Ff6-xO-93H" secondAttribute="bottom" id="XOd-Ly-vkQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Bfv-A0-P3G" secondAttribute="trailing" id="avv-94-Suz"/>
+                            <constraint firstItem="Bfv-A0-P3G" firstAttribute="leading" secondItem="LzQ-G1-ZJL" secondAttribute="leading" id="boq-jr-gLS"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="spotDetailTableView" destination="Bfv-A0-P3G" id="YIV-9j-tM1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JVZ-1v-o5O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2724" y="-81"/>
+            <point key="canvasLocation" x="2724" y="-81.409295352323838"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jSU-M9-FMD">
