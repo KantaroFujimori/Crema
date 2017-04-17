@@ -25,6 +25,7 @@ class ToMapViewController: UIViewController,GMSMapViewDelegate,CLLocationManager
         super.viewDidLoad()
         setUI()
         self.myMapView.delegate = self
+        print("hello")
         
     }
     
