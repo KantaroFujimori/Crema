@@ -14,6 +14,7 @@ class SpotDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("temp")
         
         print(contribution.name)
         // Do any additional setup after loading the view.
