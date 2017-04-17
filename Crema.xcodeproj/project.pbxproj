@@ -24,6 +24,13 @@
 		69BAD5111E93B10A00F2715C /* hairsalon.png in Resources */ = {isa = PBXBuildFile; fileRef = 69BAD50C1E93B10A00F2715C /* hairsalon.png */; };
 		69BAD5121E93B10A00F2715C /* cafe.png in Resources */ = {isa = PBXBuildFile; fileRef = 69BAD50D1E93B10A00F2715C /* cafe.png */; };
 		69BAD5181E98CC8B00F2715C /* ModelLocater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BAD5171E98CC8B00F2715C /* ModelLocater.swift */; };
+		69D051941EA3AF1500162F0A /* SpotDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D051921EA3AF1500162F0A /* SpotDetailTableViewCell.swift */; };
+		69D051951EA3AF1500162F0A /* SpotDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69D051931EA3AF1500162F0A /* SpotDetailTableViewCell.xib */; };
+		69D051971EA3B02000162F0A /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 69D051961EA3B02000162F0A /* heart.png */; };
+		69D051991EA3B03200162F0A /* spot.png in Resources */ = {isa = PBXBuildFile; fileRef = 69D051981EA3B03200162F0A /* spot.png */; };
+		69D0519C1EA3BDDA00162F0A /* SpotDetalContributionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D0519A1EA3BDDA00162F0A /* SpotDetalContributionTableViewCell.swift */; };
+		69D0519D1EA3BDDA00162F0A /* SpotDetalContributionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69D0519B1EA3BDDA00162F0A /* SpotDetalContributionTableViewCell.xib */; };
+		69D0519F1EA3C0B500162F0A /* my_profile.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 69D0519E1EA3C0B500162F0A /* my_profile.jpg */; };
 		69D95CEE1E9A36C90072A3C8 /* Contribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D95CED1E9A36C90072A3C8 /* Contribution.swift */; };
 		69D95CF01E9A3D360072A3C8 /* ContributionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D95CEF1E9A3D360072A3C8 /* ContributionModel.swift */; };
 		69D95CF31E9A65B30072A3C8 /* UploadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D95CF21E9A65B30072A3C8 /* UploadManager.swift */; };
@@ -81,6 +88,13 @@
 		69BAD50C1E93B10A00F2715C /* hairsalon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hairsalon.png; path = ../../../../Downloads/hairsalon.png; sourceTree = "<group>"; };
 		69BAD50D1E93B10A00F2715C /* cafe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cafe.png; path = ../../../../Downloads/cafe.png; sourceTree = "<group>"; };
 		69BAD5171E98CC8B00F2715C /* ModelLocater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelLocater.swift; sourceTree = "<group>"; };
+		69D051921EA3AF1500162F0A /* SpotDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotDetailTableViewCell.swift; sourceTree = "<group>"; };
+		69D051931EA3AF1500162F0A /* SpotDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpotDetailTableViewCell.xib; sourceTree = "<group>"; };
+		69D051961EA3B02000162F0A /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heart.png; path = ../../../../Downloads/heart.png; sourceTree = "<group>"; };
+		69D051981EA3B03200162F0A /* spot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spot.png; path = ../../../../Downloads/spot.png; sourceTree = "<group>"; };
+		69D0519A1EA3BDDA00162F0A /* SpotDetalContributionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotDetalContributionTableViewCell.swift; sourceTree = "<group>"; };
+		69D0519B1EA3BDDA00162F0A /* SpotDetalContributionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpotDetalContributionTableViewCell.xib; sourceTree = "<group>"; };
+		69D0519E1EA3C0B500162F0A /* my_profile.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = my_profile.jpg; path = ../../../my_profile.jpg; sourceTree = "<group>"; };
 		69D95CED1E9A36C90072A3C8 /* Contribution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contribution.swift; sourceTree = "<group>"; };
 		69D95CEF1E9A3D360072A3C8 /* ContributionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContributionModel.swift; sourceTree = "<group>"; };
 		69D95CF21E9A65B30072A3C8 /* UploadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadManager.swift; sourceTree = "<group>"; };
@@ -207,6 +221,10 @@
 			isa = PBXGroup;
 			children = (
 				69BAD4F81E9250A600F2715C /* util */,
+				69D051921EA3AF1500162F0A /* SpotDetailTableViewCell.swift */,
+				69D051931EA3AF1500162F0A /* SpotDetailTableViewCell.xib */,
+				69D0519A1EA3BDDA00162F0A /* SpotDetalContributionTableViewCell.swift */,
+				69D0519B1EA3BDDA00162F0A /* SpotDetalContributionTableViewCell.xib */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -247,6 +265,9 @@
 		69BAD5071E93B0B700F2715C /* img */ = {
 			isa = PBXGroup;
 			children = (
+				69D0519E1EA3C0B500162F0A /* my_profile.jpg */,
+				69D051961EA3B02000162F0A /* heart.png */,
+				69D051981EA3B03200162F0A /* spot.png */,
 				69BAD5081E93B0C200F2715C /* jenre */,
 			);
 			name = img;
@@ -452,13 +473,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69D051971EA3B02000162F0A /* heart.png in Resources */,
 				69BAD5101E93B10A00F2715C /* restaurant.png in Resources */,
 				69BAD4D11E912BE800F2715C /* LaunchScreen.storyboard in Resources */,
+				69D0519F1EA3C0B500162F0A /* my_profile.jpg in Resources */,
 				69BAD5111E93B10A00F2715C /* hairsalon.png in Resources */,
 				69BAD4CE1E912BE800F2715C /* Assets.xcassets in Resources */,
 				69BAD4CC1E912BE800F2715C /* Main.storyboard in Resources */,
+				69D051991EA3B03200162F0A /* spot.png in Resources */,
 				69BAD50F1E93B10A00F2715C /* clothes.png in Resources */,
+				69D051951EA3AF1500162F0A /* SpotDetailTableViewCell.xib in Resources */,
 				69BAD50E1E93B10A00F2715C /* default.png in Resources */,
+				69D0519D1EA3BDDA00162F0A /* SpotDetalContributionTableViewCell.xib in Resources */,
 				69BAD5121E93B10A00F2715C /* cafe.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,7 +533,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		2BAD52B9E5CDD4B5B2B5451F /* [CP] Check Pods Manifest.lock */ = {
@@ -522,7 +548,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		8ACD490F74FFAB220C5002DC /* [CP] Embed Pods Frameworks */ = {
@@ -612,7 +638,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -628,12 +654,14 @@
 				69D95CF31E9A65B30072A3C8 /* UploadManager.swift in Sources */,
 				69BAD5021E9383F300F2715C /* UserModel.swift in Sources */,
 				69D95CF01E9A3D360072A3C8 /* ContributionModel.swift in Sources */,
+				69D0519C1EA3BDDA00162F0A /* SpotDetalContributionTableViewCell.swift in Sources */,
 				69BAD5061E938FBC00F2715C /* User.swift in Sources */,
 				69D95CF51E9A65BE0072A3C8 /* Upload.swift in Sources */,
 				69BAD5181E98CC8B00F2715C /* ModelLocater.swift in Sources */,
 				69D95D031EA35C150072A3C8 /* APIClient.swift in Sources */,
 				69D95D001E9F5E1C0072A3C8 /* SpotDetailViewController.swift in Sources */,
 				69D95CEE1E9A36C90072A3C8 /* Contribution.swift in Sources */,
+				69D051941EA3AF1500162F0A /* SpotDetailTableViewCell.swift in Sources */,
 				69BAD4C71E912BE800F2715C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
