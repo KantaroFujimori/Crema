@@ -9,53 +9,48 @@
 import UIKit
 import GoogleMaps
 import CoreLocation
+import Bond
+import SDWebImage
 
-class ToMapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDelegate {
+class TopMapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDelegate,UISearchBarDelegate {
+    
     
     var myMapView: GMSMapView!
     let myLocationManager = CLLocationManager()
     var myNowPoint: CLLocationCoordinate2D!
     var selectedMarker: GMSMarker!
-    var contributions: [Contribution] = []
-    var selectedContribution = Contribution()
-    let userId = "kitakaze_kan13"
+    
+    let contributionVM = ModelLocater().getContributionVM()
+    
+    var topMapSearchController: UISearchController!
+    var spotDetailViewController: SpotDetailViewController!
+    
+    //実際はローカルDBから取得する
     let instaId = "1427241033.6387935.7eef93c50d6a44f785aa2800a7894763"
+    
+    var navigationVC: UINavigationController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         setUI()
+        setBond()
         self.myMapView.delegate = self
-        print("hello")
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        ModelLocater.sharedInstance.getUser().user.addObserver(self, forKeyPath: "id", options: .new, context: nil)
-        ModelLocater.sharedInstance.getUser().fetchUserData(id: userId)
-        ModelLocater.sharedInstance.getContribution().addObserver(self, forKeyPath: "contributions", options: .new, context: nil)
-        ModelLocater.sharedInstance.getContribution().fetchContributions(user_id: userId, insta_id: instaId)
+        self.contributionVM.fetchContributions(insta_id: instaId)
+        
 
     }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
-         ModelLocater.sharedInstance.getUser().user.removeObserver(self, forKeyPath: "id")
-         ModelLocater.sharedInstance.getContribution().removeObserver(self, forKeyPath: "contributions")
+       
     }
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if(keyPath == "id"){
-
-        }else if(keyPath == "contributions"){
-            self.contributions = change![.newKey] as! [Contribution]
-            for con in self.contributions{
-                self.createPin(contribution: con)
-//                let uploadSpot = Upload(contribution: con)
-//                uploadSpot.save()
-            }
-        }
-    }
-        
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -63,9 +58,6 @@ class ToMapViewController: UIViewController,GMSMapViewDelegate,CLLocationManager
     
     
     //現在地
-    func startLocation(){
-        myLocationManager.startUpdatingLocation()
-    }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let myLocation = locations.last! as CLLocation
         myNowPoint = myLocation.coordinate
@@ -94,28 +86,36 @@ class ToMapViewController: UIViewController,GMSMapViewDelegate,CLLocationManager
         myLocationManager.startUpdatingLocation()
     }
     
-    func mapView(_ mapView:GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
+    func mapView(_ mapView:GMSMapView, didTap marker: GMSMarker) -> Bool{
         self.selectedMarker = marker
-        self.performSegue(withIdentifier: "toSpotDetailSegue", sender: self)
-    }
-
-    //地点情報を受け渡す
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let spotDetailViewController = segue.destination as! SpotDetailViewController
-        for con in self.contributions {
+        //self.performSegue(withIdentifier: "toSpotDetailSegue", sender: self)
+        for con in (self.contributionVM.contributionList.value?.items)! {
             if(self.selectedMarker.snippet == con.id){
                 spotDetailViewController.contribution = con
             }
         }
-    }
-    
-    
-    func setNavigationBar() {
-        self.navigationController!.navigationBar.barTintColor = UIColor.white
-    }
-    func setUI(){
+        present(navigationVC!, animated: true, completion: nil)
+        mapView.clear()
+        return true
         
-        self.setNavigationBar()
+    }
+    func mapView(_ mapView:GMSMapView, idleAt cameraPosition:GMSCameraPosition){
+        mapView.clear()
+        let currentZoom = mapView.camera.zoom
+        if let contributionItems = self.contributionVM.contributionList.value?.items {
+            if(currentZoom >= 15){
+                for con in contributionItems {
+                    self.createDetailPin(contribution: con)
+                }
+            }else{
+                for con in contributionItems {
+                    self.createPin(contribution: con)
+                }
+            }
+        }
+    }
+    
+    func setUI(){
         
         //地図
         let status = CLLocationManager.authorizationStatus()
@@ -134,13 +134,93 @@ class ToMapViewController: UIViewController,GMSMapViewDelegate,CLLocationManager
         myLocationManager.distanceFilter = 300
         myLocationManager.startUpdatingLocation()
         
+        //nextViewController
+        spotDetailViewController = self.storyboard!.instantiateViewController(withIdentifier: "SpotDetailViewController") as! SpotDetailViewController
+        
+        //navigationViewController
+        navigationVC = UINavigationController(rootViewController: spotDetailViewController)
+        navigationVC?.isNavigationBarHidden = true
+        
+        //searchController
+        topMapSearchController = UISearchController(searchResultsController: nil)
+        topMapSearchController.hidesNavigationBarDuringPresentation = true
+        topMapSearchController.dimsBackgroundDuringPresentation = true
+        self.definesPresentationContext = true
+        let searchBar = topMapSearchController.searchBar
+        searchBar.searchBarStyle = .default
+        searchBar.barStyle = .default
+        let height = UIApplication.shared.statusBarFrame.height + (self.navigationVC?.navigationBar.frame.size.height)!
+        searchBar.frame = CGRect(x: 0, y: height, width: self.view.frame.width, height: 17)
+        searchBar.sizeToFit()
+        searchBar.delegate = self
+        self.view.addSubview(searchBar)
+        
+    }
+    func setBond(){
+        self.contributionVM.contributionList.ignoreNil().observeNext { value in
+            let currentZoom = self.myMapView.camera.zoom
+            if(currentZoom >= 15){
+                for con in (value.items)! {
+                    self.createDetailPin(contribution: con)
+                }
+            }else{
+                for con in (value.items)! {
+                    self.createPin(contribution: con)
+                }
+            }
+        }
+        
+    }
+    func createDetailPin(contribution: Contribution){
+        let position = CLLocationCoordinate2D(latitude: contribution.instaLat, longitude: contribution.instaLon)
+        let marker = GMSMarker(position: position)
+        let markerView = DetailCMView()
+        markerView.frame = CGRect(x: 0, y: 0, width: 150, height: 165)
+        
+        markerView.spotNameLabel.text = contribution.spotGoogleName
+        
+        let jenreConverter = JenreConverter()
+        let jenre = jenreConverter.convert(types: contribution.types)
+        markerView.jenreIcon.image = UIImage(named: jenre)
+        
+        let imageURL = URL(string: (contribution.thumbnail))
+        markerView.contributionImageView.sd_setImage(with: imageURL)
+        markerView.contributionImageView.layer.cornerRadius = 10
+        markerView.contributionImageView.layer.borderWidth = 0.3
+        
+        let profileImageUrl = URL(string: (contribution.userProfileUrl))
+        markerView.userIcon.sd_setImage(with: profileImageUrl)
+        markerView.userIcon.layer.borderColor = UIColor.gray.cgColor
+        markerView.userIcon.layer.borderWidth = 0.2
+        markerView.userIcon.layer.cornerRadius = 12
+        
+        
+        marker.iconView = markerView
+        marker.title = contribution.spotInstaName
+        marker.snippet = contribution.id
+        marker.map = self.myMapView
     }
     func createPin(contribution: Contribution){
-        let position = CLLocationCoordinate2D(latitude: contribution.lat, longitude: contribution.lon)
+        let position = CLLocationCoordinate2D(latitude: contribution.instaLat, longitude: contribution.instaLon)
         let marker = GMSMarker(position: position)
-        marker.title = contribution.name
+        let markerView = PinCMView()
+        markerView.frame = CGRect(x: 0, y: 0, width: 35, height: 35)
+        
+        let profileImageUrl = URL(string: (contribution.userProfileUrl))
+        markerView.userIcon.sd_setImage(with: profileImageUrl)
+        markerView.userIcon.layer.borderColor = UIColor.gray.cgColor
+        markerView.userIcon.layer.borderWidth = 0.2
+        markerView.userIcon.layer.cornerRadius = 10
+        
+        let jenreConverter = JenreConverter()
+        let jenre = jenreConverter.convert(types: contribution.types)
+        markerView.jenreIcon.image = UIImage(named: jenre)
+        
+        marker.iconView = markerView
+        marker.title = contribution.spotInstaName
         marker.snippet = contribution.id
-        marker.map = myMapView
+        marker.map = self.myMapView
     }
+    
 }
 

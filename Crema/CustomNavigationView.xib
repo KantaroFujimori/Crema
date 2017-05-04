@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomNavigationView" customModule="Crema" customModuleProvider="target">
+            <connections>
+                <outlet property="backBtn" destination="4sX-BZ-UD9" id="auj-Xe-nqr"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="CustomNavigationView" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4sX-BZ-UD9">
+                    <rect key="frame" x="8" y="22" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="2P5-Qv-Dhl"/>
+                        <constraint firstAttribute="width" constant="20" id="TrF-G1-A9H"/>
+                    </constraints>
+                    <state key="normal" title="Button" backgroundImage="back_arrow.jpg"/>
+                    <connections>
+                        <action selector="tapBackBtn:" destination="-1" eventType="touchUpInside" id="oEr-AX-aBc"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="4sX-BZ-UD9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Lke-Yn-2Dg"/>
+                <constraint firstItem="4sX-BZ-UD9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="22" id="lgu-aK-saD"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="32.5" y="-238"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="back_arrow.jpg" width="338" height="338"/>
+    </resources>
+</document>

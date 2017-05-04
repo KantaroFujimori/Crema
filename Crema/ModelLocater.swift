@@ -18,8 +18,7 @@ class ModelLocater: NSObject {
     }
     
     dynamic var userModel = UserModel()
-    dynamic var contributionModels = ContributionModel()
-    dynamic var gAPISpotModel = GAPISpotModel()
+    dynamic var contributionVM = ContributionVM()
     
     func getUser() -> UserModel {
         return userModel
@@ -29,23 +28,13 @@ class ModelLocater: NSObject {
         userModel = user
         return userModel
     }
-    
-    func getContribution() -> ContributionModel {
-        return contributionModels
+    func getContributionVM() -> ContributionVM {
+        return contributionVM
     }
     
-    func setContribution(array:ContributionModel) -> ContributionModel {
-        contributionModels = array
-        return contributionModels
-    }
-    
-    func getGAPISpotModel() -> GAPISpotModel {
-        return gAPISpotModel
-    }
-    
-    func setGAPISpotModel(gAPISpot:GAPISpotModel) -> GAPISpotModel {
-        gAPISpotModel = gAPISpot
-        return gAPISpotModel
+    func setContributionVM(contribution:ContributionVM) -> ContributionVM {
+        contributionVM = contribution
+        return contributionVM
     }
     
     

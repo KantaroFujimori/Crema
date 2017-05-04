@@ -19,6 +19,7 @@ target 'Crema' do
 	pod "PromiseKit", "~> 4.0"
 	pod 'PromiseKit/Alamofire'
 	pod "PromiseKit/CoreLocation"
+	pod ‘RealmSwift’
 
   target 'CremaTests' do
     inherit! :search_paths
