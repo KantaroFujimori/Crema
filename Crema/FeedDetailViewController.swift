@@ -14,7 +14,7 @@ class FeedDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBOutlet weak var customNavigationView: CustomNavigationView!
     @IBOutlet weak var feedTableView: UITableView!
-    var contribution: Contribution?
+    var contribution: ContributionRealm?
 
     override func viewDidLoad() {
         super.viewDidLoad()

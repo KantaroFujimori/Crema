@@ -9,50 +9,118 @@
 import Foundation
 import ObjectMapper
 import Alamofire
+import RealmSwift
+import SwiftyJSON
 
-class Contribution: Mappable {
+class Contribution: NSObject {
     
-    var id: String = ""
-    var userId: String = ""
-    var userName: String = ""
-    var userProfileUrl: String = ""
-    var thumbnail: String = ""
-    var rawImage: String = ""
-    var standardImage: String = ""
-    var caption: String = ""
-    var tags: [String] = []
-    var instaLat: Double = 0
-    var instaLon: Double = 0
-    var spotInstaName: String = ""
-    var spotInstaId: String = ""
-    var lat: Double = 0
-    var lon: Double = 0
-    var spotGoogleId: String = ""
-    var spotGoogleName: String = ""
-    var types: [String] = []
+    static let url = "http://160.16.68.195/spot_list_follow.php"
     
-    required init?(map: Map) {
+    static func initializeObject(
+        id: String,
+        userId: String,
+        userName: String,
+        userProfileUrl: String,
+        thumbnail: String,
+        rawImage: String,
+        standardImage: String,
+        caption: String,
+        //tags: [AnyObject],
+        instaLat: Double,
+        instaLon: Double,
+        spotInstaName: String,
+        spotInstaId: String,
+        lat: Double,
+        lon: Double,
+        spotGoogleId: String,
+        spotGoogleName: String,
+        types: TypesRealm) -> ContributionRealm {
+        
+        let contribution = ContributionRealm()
+        contribution.id = id
+        contribution.userId = userId
+        contribution.userName = userName
+        contribution.userProfileUrl = userProfileUrl
+        contribution.thumbnail = thumbnail
+        contribution.rawImage = rawImage
+        contribution.standardImage = standardImage
+        contribution.caption = caption
+        //contribution.tags = tags
+        contribution.instaLat = instaLat
+        contribution.instaLon = instaLon
+        contribution.spotInstaName = spotInstaName
+        contribution.spotInstaId = spotInstaId
+        contribution.lat = lat
+        contribution.lon = lon
+        contribution.spotGoogleId = spotGoogleId
+        contribution.spotGoogleName = spotGoogleName
+        contribution.types = types
+    
+        return contribution
     }
     
-    func mapping(map: Map) {
-        id <- map["id"]
-        userId <- map["user.id"]
-        userName <- map["user.username"]
-        userProfileUrl <- map["user.profile_picture"]
-        thumbnail <- map["images.thumbnail.url"]
-        rawImage <- map["images.low_resolution.url"]
-        standardImage <- map["images.standard_resolution.url"]
-        caption <- map["caption.text"]
-        tags <- map["tags"]
-        instaLat <- map["location.latitude"]
-        instaLon <- map["location.longitude"]
-        spotInstaName <- map["location.name"]
-        spotInstaId <- map["location.id"]
-        lat <- map["google_place.geometry.location.lat"]
-        lon <- map["google_place.geometry.location.lon"]
-        spotGoogleId <- map["google_place.id"]
-        spotGoogleName <- map["google_place.name"]
-        types <- map["google_place.types"]
+    static func getAll() -> Results<ContributionRealm>{
+        let realm = try! Realm()
+        return realm.objects(ContributionRealm.self).sorted(byKeyPath: "id", ascending: false)
+    }
+    
+    static func fetch(instaId: String) {
+        let params: [String: AnyObject] = [
+            "access_token": instaId as AnyObject,
+            ]
+        
+        Alamofire.request(url, method: .get, parameters: params)
+            .validate { request, response, data in
+                return .success
+            }
+            .responseJSON { response in
+                guard let res = response.result.value else {
+                    return
+                }
+                
+                let realm = try! Realm()
+                let jsonResponse = JSON(res)
+                let jsonResponseArray = jsonResponse["data"]
+                
+                realm.beginWrite()
+                // 削除
+                let contribution = realm.objects(ContributionRealm.self)
+                realm.delete(contribution)
+                
+                // 作成
+                jsonResponseArray.forEach { (_, json) in
+                    var type = TypesRealm()
+                    if let types = json["google_place"]["type"].arrayObject as? [String]{
+                         type = Types.initializeObject(
+                            id: json["google_place"]["id"].stringValue,
+                            type: types[0])
+                    }
+                    
+                    let contribution = self.initializeObject(
+                        id: json["id"].stringValue,
+                        userId: json["user"]["id"].stringValue,
+                        userName: json["user"]["username"].stringValue,
+                        userProfileUrl: json["user"]["profile_picture"].stringValue,
+                        thumbnail: json["images"]["thumbnail"]["url"].stringValue,
+                        rawImage: json["images"]["rawImage"]["url"].stringValue,
+                        standardImage: json["images"]["standardImage"]["url"].stringValue,
+                        caption: json["caption"]["text"].stringValue,
+                        //tags: json["tags"].arrayValue,
+                        instaLat: json["location"]["latitude"].doubleValue,
+                        instaLon: json["location"]["longitude"].doubleValue,
+                        spotInstaName: json["location"]["name"].stringValue,
+                        spotInstaId: json["location"]["id"].stringValue,
+                        lat: json["google_place"]["geometry"]["location"]["lat"].doubleValue,
+                        lon: json["google_place"]["geometry"]["location"]["lng"].doubleValue,
+                        spotGoogleId: json["google_place"]["id"].stringValue,
+                        spotGoogleName: json["google_place"]["name"].stringValue,
+                        types: type)
+                    
+                    realm.add(contribution, update: true)
+                    
+                }
+                try! realm.commitWrite()
+        }
     }
 
 }

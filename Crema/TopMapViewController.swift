@@ -20,7 +20,7 @@ class TopMapViewController: UIViewController,GMSMapViewDelegate,CLLocationManage
     var myNowPoint: CLLocationCoordinate2D!
     var selectedMarker: GMSMarker!
     
-    let contributionVM = ModelLocater().getContributionVM()
+    let contributionVM = ContributionVM()
     
     var topMapSearchController: UISearchController!
     var spotDetailViewController: SpotDetailViewController!
@@ -37,12 +37,13 @@ class TopMapViewController: UIViewController,GMSMapViewDelegate,CLLocationManage
         setBond()
         self.myMapView.delegate = self
         
+        self.contributionVM.fetch(instaId: instaId)
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
-        self.contributionVM.fetchContributions(insta_id: instaId)
         
 
     }
@@ -102,7 +103,7 @@ class TopMapViewController: UIViewController,GMSMapViewDelegate,CLLocationManage
     func mapView(_ mapView:GMSMapView, idleAt cameraPosition:GMSCameraPosition){
         mapView.clear()
         let currentZoom = mapView.camera.zoom
-        if let contributionItems = self.contributionVM.contributionList.value?.items {
+        if let contributionItems = (self.contributionVM.contributionList.value?.items){
             if(currentZoom >= 15){
                 for con in contributionItems {
                     self.createDetailPin(contribution: con)
@@ -158,6 +159,7 @@ class TopMapViewController: UIViewController,GMSMapViewDelegate,CLLocationManage
     }
     func setBond(){
         self.contributionVM.contributionList.ignoreNil().observeNext { value in
+            print("observed")
             let currentZoom = self.myMapView.camera.zoom
             if(currentZoom >= 15){
                 for con in (value.items)! {
@@ -171,7 +173,7 @@ class TopMapViewController: UIViewController,GMSMapViewDelegate,CLLocationManage
         }
         
     }
-    func createDetailPin(contribution: Contribution){
+    func createDetailPin(contribution: ContributionRealm){
         let position = CLLocationCoordinate2D(latitude: contribution.instaLat, longitude: contribution.instaLon)
         let marker = GMSMarker(position: position)
         let markerView = DetailCMView()
@@ -179,9 +181,9 @@ class TopMapViewController: UIViewController,GMSMapViewDelegate,CLLocationManage
         
         markerView.spotNameLabel.text = contribution.spotGoogleName
         
-        let jenreConverter = JenreConverter()
-        let jenre = jenreConverter.convert(types: contribution.types)
-        markerView.jenreIcon.image = UIImage(named: jenre)
+        //let jenreConverter = JenreConverter()
+        //let jenre = jenreConverter.convert(types: contribution.types)
+        markerView.jenreIcon.image = UIImage(named: "default")
         
         let imageURL = URL(string: (contribution.thumbnail))
         markerView.contributionImageView.sd_setImage(with: imageURL)
@@ -200,7 +202,7 @@ class TopMapViewController: UIViewController,GMSMapViewDelegate,CLLocationManage
         marker.snippet = contribution.id
         marker.map = self.myMapView
     }
-    func createPin(contribution: Contribution){
+    func createPin(contribution: ContributionRealm){
         let position = CLLocationCoordinate2D(latitude: contribution.instaLat, longitude: contribution.instaLon)
         let marker = GMSMarker(position: position)
         let markerView = PinCMView()
@@ -212,9 +214,9 @@ class TopMapViewController: UIViewController,GMSMapViewDelegate,CLLocationManage
         markerView.userIcon.layer.borderWidth = 0.2
         markerView.userIcon.layer.cornerRadius = 10
         
-        let jenreConverter = JenreConverter()
-        let jenre = jenreConverter.convert(types: contribution.types)
-        markerView.jenreIcon.image = UIImage(named: jenre)
+        //let jenreConverter = JenreConverter()
+        //let jenre = jenreConverter.convert(types: contribution.types)
+        markerView.jenreIcon.image = UIImage(named: "default")
         
         marker.iconView = markerView
         marker.title = contribution.spotInstaName

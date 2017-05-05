@@ -53,6 +53,8 @@
 		69F357D91EB9F31C0055D2A0 /* TopMapSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F357D81EB9F31C0055D2A0 /* TopMapSearchController.swift */; };
 		69F357DD1EBB13EB0055D2A0 /* ContributionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F357DC1EBB13EB0055D2A0 /* ContributionData.swift */; };
 		69F357E31EBB26270055D2A0 /* ContributionRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F357E21EBB26270055D2A0 /* ContributionRealm.swift */; };
+		69F357E51EBC6DCD0055D2A0 /* TypesRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F357E41EBC6DCD0055D2A0 /* TypesRealm.swift */; };
+		69F357E71EBC6E290055D2A0 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F357E61EBC6E290055D2A0 /* Types.swift */; };
 		6FA16B6BAF94455E975723BA /* Pods_Crema.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5CA860460D25D055BEB160 /* Pods_Crema.framework */; };
 		FDE1384B3C8830AFF2921DD4 /* Pods_CremaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84831BD380CE0B2C9A301A4C /* Pods_CremaUITests.framework */; };
 /* End PBXBuildFile section */
@@ -132,6 +134,8 @@
 		69F357D81EB9F31C0055D2A0 /* TopMapSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopMapSearchController.swift; sourceTree = "<group>"; };
 		69F357DC1EBB13EB0055D2A0 /* ContributionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContributionData.swift; sourceTree = "<group>"; };
 		69F357E21EBB26270055D2A0 /* ContributionRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContributionRealm.swift; sourceTree = "<group>"; };
+		69F357E41EBC6DCD0055D2A0 /* TypesRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypesRealm.swift; sourceTree = "<group>"; };
+		69F357E61EBC6E290055D2A0 /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		84831BD380CE0B2C9A301A4C /* Pods_CremaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CremaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97527091E3B658C29A137980 /* Pods_CremaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CremaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C798FE8FB79E643B01B311 /* Pods-CremaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CremaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CremaUITests/Pods-CremaUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -340,6 +344,7 @@
 				69F214D11EA71F430091058A /* Contribution.swift */,
 				69F214D31EA71F540091058A /* ContributionVM.swift */,
 				69F214D51EA74F1A0091058A /* ContributionList.swift */,
+				69F357E61EBC6E290055D2A0 /* Types.swift */,
 			);
 			name = contributions;
 			sourceTree = "<group>";
@@ -406,6 +411,7 @@
 			children = (
 				69F357DC1EBB13EB0055D2A0 /* ContributionData.swift */,
 				69F357E21EBB26270055D2A0 /* ContributionRealm.swift */,
+				69F357E41EBC6DCD0055D2A0 /* TypesRealm.swift */,
 			);
 			name = contributions;
 			sourceTree = "<group>";
@@ -741,6 +747,8 @@
 				69103B701EB2BCEA002A3A2A /* DetailCMView.swift in Sources */,
 				69D95D001E9F5E1C0072A3C8 /* SpotDetailViewController.swift in Sources */,
 				69D051941EA3AF1500162F0A /* SpotDetailTableViewCell.swift in Sources */,
+				69F357E71EBC6E290055D2A0 /* Types.swift in Sources */,
+				69F357E51EBC6DCD0055D2A0 /* TypesRealm.swift in Sources */,
 				69F357D61EB6ADC90055D2A0 /* JenreConverter.swift in Sources */,
 				69F357E31EBB26270055D2A0 /* ContributionRealm.swift in Sources */,
 				69F214D21EA71F430091058A /* Contribution.swift in Sources */,

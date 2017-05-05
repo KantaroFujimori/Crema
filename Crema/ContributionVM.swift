@@ -12,6 +12,7 @@ import Alamofire
 import SwiftyJSON
 import Bond
 import PromiseKit
+import RealmSwift
 
 enum RequestListState{
     case none
@@ -19,30 +20,37 @@ enum RequestListState{
     case error
 }
 
-class ContributionVM: NSObject {
+class ContributionVM {
     
-    let contributionList = Observable<ContributionList?>(nil)
-    let requestListState = Observable<RequestListState>(.none)
+    var contributionList = MutableObservableArray([ContributionRealm]())
+    var requestListState = Observable<RequestListState>(.none)
+    var notificationToken: NotificationToken?
     
-    
-    func fetchContributions(insta_id: String){
-        let params: [String: AnyObject] = [
-            "access_token": insta_id as AnyObject,
-            ]
-        let url = "http://160.16.68.195/spot_list_follow.php"
+    init(){
+        let contribution = Contribution.getAll()
+        print("contributionVM init")
         
-        Alamofire.request(url, method: .get, parameters: params)
-            .validate { request, response, data in
-                return .success
-            }
-            .responseJSON { response in
-                if let object = response.result.value {
-                    let mapper = Mapper<ContributionList>()
-                    let list = mapper.map(JSONObject: object)
-                    self.contributionList.value = list
-                    self.requestListState.value = .none
+        notificationToken = contribution.addNotificationBlock( { [weak self] (changes:  RealmCollectionChange) in
+            switch changes {
+            case .initial(_):
+                var tmpArray: [ContributionRealm] = []
+                contribution.forEach{(con) -> Void in
+                    self?.contributionList.append(con)
                 }
-        }
+                break
+                
+            case .update(_,_,_,_):
+                
+                break
+                
+            case .error(let error):
+                fatalError("\(error)")
+                break
+            }
+        })
+    }
+    func fetch(instaId: String){
+        Contribution.fetch(instaId: instaId)
     }
 
 }

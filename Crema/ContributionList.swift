@@ -7,16 +7,12 @@
 //
 
 import Foundation
+import RealmSwift
 import ObjectMapper
 
-class ContributionList: Mappable {
+class ContributionList: NSObject {
 
-    var items: [Contribution]?
+    dynamic var items: [ContributionRealm]? = []
+
     
-    required init?(map: Map) {
-    }
-    
-    func mapping(map: Map) {
-        items <- map["data"]
-    }
 }

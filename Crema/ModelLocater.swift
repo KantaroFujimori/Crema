@@ -18,7 +18,7 @@ class ModelLocater: NSObject {
     }
     
     dynamic var userModel = UserModel()
-    dynamic var contributionVM = ContributionVM()
+    //dynamic var contributionVM = ContributionVM()
     
     func getUser() -> UserModel {
         return userModel
@@ -28,14 +28,14 @@ class ModelLocater: NSObject {
         userModel = user
         return userModel
     }
-    func getContributionVM() -> ContributionVM {
-        return contributionVM
-    }
-    
-    func setContributionVM(contribution:ContributionVM) -> ContributionVM {
-        contributionVM = contribution
-        return contributionVM
-    }
+//    func getContributionVM() -> ContributionVM {
+//        return contributionVM
+//    }
+//    
+//    func setContributionVM(contribution:ContributionVM) -> ContributionVM {
+//        contributionVM = contribution
+//        return contributionVM
+//    }
     
     
 

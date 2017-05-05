@@ -16,7 +16,7 @@ class SpotDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBOutlet weak var customNavigationView: CustomNavigationView!
     
-    var contribution: Contribution?
+    var contribution: ContributionRealm?
     var navigationVC: UINavigationController?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,9 +65,9 @@ class SpotDetailViewController: UIViewController, UITableViewDelegate, UITableVi
             cell.spotTopImage.sd_setImage(with: imageURL)
             
             //MARK: set temporary info
-            let jenreConverter = JenreConverter()
-            let jenre = jenreConverter.convert(types: (self.contribution?.types)!)
-            cell.jenreImage.image = UIImage(named: jenre)
+//            let jenreConverter = JenreConverter()
+//            let jenre = jenreConverter.convert(types: (self.contribution?.types)!)
+            cell.jenreImage.image = UIImage(named: "default")
             
             
             cell.priceLabel.text = "〜999"
